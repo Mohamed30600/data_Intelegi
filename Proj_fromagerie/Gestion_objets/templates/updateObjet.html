@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="col-md-12">
+<form method="POST" class="post-form" action="/updateObjet/{{t_objet.codobj}}">
+        {% csrf_token %}
+        <h1>mise ajour des donne de la ville</h1>
+        <div class="mb-3">
+          <label >Objet ID:</label>
+          <input type="text" class="form-control" name="id" id="id_id" value="{{t_objet.codobj}}"
+        </div>
+        <label  >Designation</label>
+        <input type="text" class="form-control" name="libobj" id="id_objet" value="{{t_objet.libobj}}"
+        <div class="mb-3">
+          <label  >Taille</label>
+          <input type="text" class="form-control" name="tailleobj" id="id_tailleobj" value="{{t_objet.tailleobj}}"
+        </div>
+        <div class="mb-3">
+            <label  >Prix unitaire</label>
+            <input type="text" class="form-control" name="puobj" id="id_puobj" value="{{t_objet.puobj}}"
+          </div>
+          <div class="mb-3">
+            <label  >Poid</label>
+            <input type="text" class="form-control" name="poidsobj" id="id_poidsobj" value="{{t_objet.poidsobj}}"
+          </div>
+          <div class="mb-3">
+            <label  >Ordre impression</label>
+            <input type="text" class="form-control" name="o_imp" id="id_o_imp" value="{{t_objet.o_imp}}"
+          </div>
+          <div class="mb-3">
+            <label  >Contionement</label>
+            <input type="text" class="form-control" name="idcondit" id="id_idcondit" value="{{t_objet.idcondit}}"
+          </div>
+          <div class="mb-3">
+            <label  >Points</label>
+            <input type="text" class="form-control" name="points" id="id_points" value="{{t_objet.points}}"
+          </div>
+        <button type="submit" class="btn btn-success btn-lg">Submit</button>
+      </form>
+    
+</form>
+
+</div>
+
+
+{% endblock content %}
+
+
+
+

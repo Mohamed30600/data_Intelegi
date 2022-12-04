@@ -1,8 +1,56 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div class ="justify-content-center ">
 
-{{tobjets}}
-
-
+  <div class="container mb-5 pb-5">
+    <div class="row">
+      <div class="col-sm">
+      </div>
+      <div class="col-sm">
+      </div>
+      <div class="col-sm">
+        <span><a href="/addObjet" class="btn btn-success btn-lg" >Ajouter un objet</span></a><br>
+      </div>
+  </div>
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Désignation</th>
+      <th scope="col">Taille</th>
+      <th scope="col">Prix Unitaire</th>
+      <th scope="col">Poids</th>
+      <th scope="col">Ordre_impression</th>
+      <th scope="col">publicitaire</th>
+      <th scope="col">Conditionement</th>
+      <th scope="col">Points</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for obj in tobjet %}
+    <tr>
+      <td>{{obj.codobj}}</td>
+      <td>{{obj.libobj}}</td>
+      <td>{{obj.tailleobj}}</td>
+      <td>{{obj.puobj}}</td>
+      <td>{{obj.poidsobj}}</td>
+      <td>{{obj.o_imp}}</td>
+      <td>checkbox</td>
+      <td>{{obj.idcondit}}</td>
+      <td>{{obj.points}}</td>
+      <td>
+        <div class="">
+          <span><a href="{% url 'updateObjet' obj.codobj %}" class= "btn btn-primary mb-3" >modifier </span></a><br>
+          <span><a href="{% url 'delObjet' obj.codobj %}" class="btn btn-danger">suprimer </span></a><br>
+        </div>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock content %}
+</div>
+

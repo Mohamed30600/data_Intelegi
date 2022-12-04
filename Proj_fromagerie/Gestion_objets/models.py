@@ -3,7 +3,7 @@ from django.db import models
 
 
 class TObjet(models.Model):
-    codobj = models.IntegerField()
+    codobj = models.IntegerField(primary_key=True)
     libobj = models.CharField(max_length=50, blank=True, null=True)
     tailleobj = models.CharField(db_column='Tailleobj', max_length=50, blank=True, null=True)  # Field name made lowercase.
     puobj = models.DecimalField(max_digits=19, decimal_places=4, blank=True, null=True)

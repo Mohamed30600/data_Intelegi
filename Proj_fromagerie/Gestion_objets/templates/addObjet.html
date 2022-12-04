@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Ajouter d'un objet</h1>
+
+<div class="col-md-12">
+    <form method="POST" class="post-form" action="/addObjet/">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label >designation</label>
+          {{form.libobj}}
+        </div>
+        <div class="mb-3">
+          <label  >taille</label>
+          {{form.tailleobj}}
+        </div>
+        <div class="mb-3">
+            <label  >Prix unitaire</label>
+            {{form.puobj}}
+          </div>
+        <div class="mb-3">
+            <label >Poids</label>
+            {{form.poidsobj}}
+        </div>
+        <div class="mb-3">
+            <label  >ordre impression</label>
+            {{form.o_imp}}
+        </div>
+        <div class="mb-3">
+            <label  >Conditionement</label>
+            {{form.idcondit}}
+        </div>
+        <div class="mb-3">
+            <label  >Points</label>
+            {{form.points}}
+        </div>
+          
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+{% endblock content %}

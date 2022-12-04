@@ -33,5 +33,9 @@ urlpatterns = [
    path('addCommune/',Gestion_communes.views.addCommune,name='addCommune'),
    path('updateCommune/<pk>',Gestion_communes.views.updateCommune,name='updateCommune'),
    path('delCommune/<pk>',Gestion_communes.views.delCommune,name='delCommune'),
-   path('objets/',Gestion_objets.views.listObjets,name='liste_objets')
+   path('objets/',Gestion_objets.views.listObjets,name='liste_objets'),
+   path('addObjet/',Gestion_objets.views.addObjet,name='addObjet'),
+   path('updateObjet/<pk>',Gestion_objets.views.updateObjet,name='updateObjet'),
+    path('delObjet/<pk>',Gestion_objets.views.delObjet,name='delObjet'),
+   
 ]

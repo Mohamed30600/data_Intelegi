@@ -1,21 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
-<div>
-  <div class="col-md-12">
-    <span><a href="/addCommune" >ajouter une commune</span><br>
- 
-    </div>
-    <table class="table">
-      
-      <tbody>
-        <tr>
-      <td>ID</td>
-      <td><strong>Communes</strong></td>
-      <td><strong>code postale</strong></td>
-      <td>Departement</td>
-      <td>ville</td>
-      <td>Action</td>
+<div class ="text-center ">
+
+  <div class="container mb-5">
+    <div class="row">
+      <div class="col-sm">
+      </div>
+      <div class="col-sm">
+      </div>
+      <div class="col-sm">
+        <span><a href="/addCommune" class="btn btn-success btn-lg" >Ajouter une Commune</span></a><br>
+      </div>
+  </div>
+</div>
+<table class="table table-bordered">
+  <thead>   
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Communes</th>
+      <th scope="col">code postale</th>
+      <th scope="col">Departement</th>
+      <th scope="col">Action</th>
     </tr>
+  </thead>
+  <tbody>
     {% for list in liste %}
     <tr>
       <td>{{list.idcom}}</td>
@@ -25,9 +33,9 @@
       <td>{{list.ville}}</td>
       <td>
         <div class="col-md-12">
-          <span><a href="{% url 'updateCommune' list.idcom %}" class= "btn-btn-primary" >modifier </span><br>
-          <span><a href="{% url 'delCommune' list.idcom %}" class="btn-btn-primary">suprimer </span><br>
-          </div>
+          <span><a href="{% url 'updateCommune' list.idcom %}" class= "btn btn-primary mb-2" >modifier </span></a><br>
+          <span><a href="{% url 'delCommune' list.idcom %}" class="btn btn-danger">suprimer </span></a><br>
+        </div>
       </td>
     </tr>
     
@@ -37,4 +45,5 @@
 </table>
 </div>
 
-  {% endblock content %}
+{% endblock content %}
+<div>
