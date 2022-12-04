@@ -15,7 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+import Authentification.views
+import Gestion_utilisateurs.views
+import Gestion_communes.views
+import Gestion_objets.views
+#vue generique de connexion fournit par django
+from django.contrib.auth.views import LoginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+     
+    path('login/', Authentification.views.login_page, name='login'),
+   path('signup/',Authentification.views.signup_page,name = 'signup'),
+#    path('home/',Gestion_utilisateurs.views.home,name='home'),
+   path('utilisateurs/',Gestion_utilisateurs.views.ListeUtilisateurs,name='listeUtilisateurs'),
+   path('communes/',Gestion_communes.views.listeCommune,name='listeCommunes'),
+   path('addCommune/',Gestion_communes.views.addCommune,name='addCommune'),
+   path('updateCommune/<pk>',Gestion_communes.views.updateCommune,name='updateCommune'),
+   path('delCommune/<pk>',Gestion_communes.views.delCommune,name='delCommune'),
+   path('objets/',Gestion_objets.views.listObjets,name='liste_objets')
 ]

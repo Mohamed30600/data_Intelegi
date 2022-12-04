@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<table class="table table-bordered border-primary">
+  <tr>
+    <td><strong>id</strong></td>
+    <td><strong>Nom</strong></td>
+    <td>Username</td>
+    <td>Role</td>
+    <td>Action</td>
+
+  </tr>
+  {%for contact in liste %}
+  <tr>
+    <td><strong>{{contact.code_utilisateur}}</strong></td>
+    <td>{{contact.first_name}}</td>
+    <td>{{contact.username}}</td>
+    <td>{{contact.role}}</td>
+    <td>action</td>
+  </tr>
+  {% endfor %}
+  </table>
+{% endblock content %}

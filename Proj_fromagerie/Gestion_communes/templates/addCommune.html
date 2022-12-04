@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Ajouter une commune</h1>
+
+<div class="col-md-12">
+    <form method="POST" class="post-form" action="/addCommune/">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label >Communes</label>
+          {{form.communes}}
+        </div>
+        <div class="mb-3">
+          <label  >departement</label>
+          {{form.dep}}
+        </div>
+        <div class="mb-3">
+            <label  >code Postale</label>
+            {{form.cp}}
+          </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+{% endblock content %}

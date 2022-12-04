@@ -1,3 +1,12 @@
 from django.db import models
 
-# Create your models here.
+class TConditionnement(models.Model):
+    idcondit = models.IntegerField()
+    libcondit = models.CharField(max_length=50, blank=True, null=True)
+    poidscondit = models.IntegerField(blank=True, null=True)
+    prixcond = models.DecimalField(max_digits=19, decimal_places=4, blank=True, null=True)
+    ordreimp = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = True
+        db_table = 't_conditionnement'

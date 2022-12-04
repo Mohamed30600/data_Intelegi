@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+  <div class="col-md-12">
+    <span><a href="/addCommune" >ajouter une commune</span><br>
+ 
+    </div>
+    <table class="table">
+      
+      <tbody>
+        <tr>
+      <td>ID</td>
+      <td><strong>Communes</strong></td>
+      <td><strong>code postale</strong></td>
+      <td>Departement</td>
+      <td>ville</td>
+      <td>Action</td>
+    </tr>
+    {% for list in liste %}
+    <tr>
+      <td>{{list.idcom}}</td>
+      <td>{{list.communes}}</td>
+      <td>{{list.cp}}</td>
+      <td>{{list.dep}}</td>
+      <td>{{list.ville}}</td>
+      <td>
+        <div class="col-md-12">
+          <span><a href="{% url 'updateCommune' list.idcom %}" class= "btn-btn-primary" >modifier </span><br>
+          <span><a href="{% url 'delCommune' list.idcom %}" class="btn-btn-primary">suprimer </span><br>
+          </div>
+      </td>
+    </tr>
+    
+    {% endfor %}
+  </tbody>
+  
+</table>
+</div>
+
+  {% endblock content %}
