@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Ajouter d'un objet</h1>
+
+<div class="col-md-12">
+    <form method="POST" class="post-form" action="/addConditionnement/">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label >NOM</label>
+          {{form.libcondit}}
+        </div>
+        <div class="mb-3">
+          <label  >Poids</label>
+          {{form.poidscondit}}
+        </div>
+        <div class="mb-3">
+            <label  >Tarif</label>
+            {{form.prixcond}}
+          </div>
+          
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+{% endblock content %}

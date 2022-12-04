@@ -19,6 +19,7 @@ import Authentification.views
 import Gestion_utilisateurs.views
 import Gestion_communes.views
 import Gestion_objets.views
+import Gestion_conditionnement.views
 #vue generique de connexion fournit par django
 from django.contrib.auth.views import LoginView
 
@@ -37,5 +38,7 @@ urlpatterns = [
    path('addObjet/',Gestion_objets.views.addObjet,name='addObjet'),
    path('updateObjet/<pk>',Gestion_objets.views.updateObjet,name='updateObjet'),
     path('delObjet/<pk>',Gestion_objets.views.delObjet,name='delObjet'),
+    path('conditionnement/',Gestion_conditionnement.views.listConditionnement,name='conditionnement'),
+    path('addconditionnement/',Gestion_conditionnement.views.addconditionnement,name='addconditionnement'),
    
 ]

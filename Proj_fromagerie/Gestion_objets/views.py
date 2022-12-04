@@ -5,7 +5,6 @@ from  Gestion_conditionnement.models import TConditionnement
 from Gestion_objets.forms import Objetform
 
 
-
 def listObjets (request):
     objets = TObjet.objects.all()
     
@@ -39,6 +38,6 @@ def updateObjet (request,pk):
         
 
 def delObjet(request,pk):
-    commune =TObjet.objects.get(codobj=pk)
+    commune =TObjet.objects.get(idcom=pk)
     commune.delete()
     return redirect("/objets")
