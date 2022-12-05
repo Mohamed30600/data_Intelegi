@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Ajouter d'un objet</h1>
+<h1>Ajouter d'un embalage</h1>
 
 <div class="col-md-12">
-    <form method="POST" class="post-form" action="/addConditionnement/">
+    <form method="POST" class="post-form" action="/addconditionnement/">
         {% csrf_token %}
         <div class="mb-3">
           <label >NOM</label>

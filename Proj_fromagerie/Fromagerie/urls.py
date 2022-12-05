@@ -28,7 +28,7 @@ urlpatterns = [
      
     path('login/', Authentification.views.login_page, name='login'),
    path('signup/',Authentification.views.signup_page,name = 'signup'),
-#    path('home/',Gestion_utilisateurs.views.home,name='home'),
+    path('',Authentification.views.home,name='home'),
    path('utilisateurs/',Gestion_utilisateurs.views.ListeUtilisateurs,name='listeUtilisateurs'),
    path('communes/',Gestion_communes.views.listeCommune,name='listeCommunes'),
    path('addCommune/',Gestion_communes.views.addCommune,name='addCommune'),
@@ -40,5 +40,7 @@ urlpatterns = [
     path('delObjet/<pk>',Gestion_objets.views.delObjet,name='delObjet'),
     path('conditionnement/',Gestion_conditionnement.views.listConditionnement,name='conditionnement'),
     path('addconditionnement/',Gestion_conditionnement.views.addconditionnement,name='addconditionnement'),
+    path('updateConditionement/<pk>',Gestion_conditionnement.views.updateConditionnement,name='updateConditionement'),
+    path('delconditionnement/<pk>',Gestion_conditionnement.views.delConditionement,name='delConditionement'),
    
 ]

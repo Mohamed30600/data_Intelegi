@@ -4,7 +4,8 @@ from django.shortcuts import redirect,render
 from . import forms
 from django.contrib.auth import login,logout, authenticate # import des fonctions login et authenticate
 
-
+def home (request):
+    return render(request,'authentification/home.html')
 
 def signup_page(request):
     form = forms.SingupForm()

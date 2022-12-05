@@ -14,10 +14,25 @@ def addconditionnement(request):
             if form.is_valid():
                 try:
                     form.save()
-                    return redirect('/objets')
+                    return redirect('/conditionnement')
                 except:
                     pass
             
         else:
                form = Conditionnementform()
-        return render (request,'addConditionnement.html',{'form':form})
+        return render (request,'addconditionnement.html',{'form':form})
+    
+def updateConditionnement (request,pk):
+            conditionnement = TConditionnement.objects.get(idcondit=pk)
+            if request.method == 'POST':
+                form = Conditionnementform(request.POST,instance=conditionnement)
+                if form.is_valid():
+                    form.save()
+                    return redirect ("/conditionnement")
+            return render(request,'updateConditionement.html',{'tconditionvement':conditionnement})
+        
+        
+def delConditionement (request,pk):
+    conditionnement =TConditionnement.objects.get(idcondit=pk)
+    conditionnement.delete()
+    return redirect("/conditionnement")

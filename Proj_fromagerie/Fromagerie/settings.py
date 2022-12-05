@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'Gestion_utilisateurs',
     'Gestion_communes',
     'Gestion_objets',
-    'Gestion_conditionnement'
+    'Gestion_conditionnement',
+    'crispy_forms'
     
 ]
 
@@ -161,3 +162,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'Authentification.TUtilisateur'
 
 LOGIN_REDIRECT_URL ='home' #permet de rediriger ver login si pas identiifer avec la logique de classe
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
