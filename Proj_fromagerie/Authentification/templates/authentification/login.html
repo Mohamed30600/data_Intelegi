@@ -1,9 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
     <p>{{ message }}</p>
-    <form method="post">
+    {% comment %} <form method="post">
         {{ form.as_p }}
         {% csrf_token %}
         <button type="submit" >Se connecter</button>
-    </form>
+    </form> {% endcomment %}
+    {% load crispy_forms_tags %}
+<table borser="0" width = "1000" height = 400>
+    <tr>
+        <td style = "padding-left:515px;">
+        <h1>Page de Connexion</h1>
+<form method="POST">
+  {% csrf_token %}
+  <fieldset class="form-group">
+    {{ form|crispy }}
+  </fieldset>
+  <div class="form-group">
+    <button class="btn btn-outline-info" type="submit">Register</button>
+  </div>
+</form>
+ 
+        </td>
+    </tr>
+ 
+    </table>
 {% endblock content %}

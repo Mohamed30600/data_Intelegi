@@ -38,6 +38,6 @@ def updateObjet (request,pk):
         
 
 def delObjet(request,pk):
-    commune =TObjet.objects.get(idcom=pk)
+    commune =TObjet.objects.get(codobj=pk)
     commune.delete()
     return redirect("/objets")

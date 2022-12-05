@@ -30,6 +30,7 @@ urlpatterns = [
    path('signup/',Authentification.views.signup_page,name = 'signup'),
     path('',Authentification.views.home,name='home'),
    path('utilisateurs/',Gestion_utilisateurs.views.ListeUtilisateurs,name='listeUtilisateurs'),
+   path('delUtilisateur/<pk>',Gestion_utilisateurs.views.delUtilisateur,name='delUtilisateur'),
    path('communes/',Gestion_communes.views.listeCommune,name='listeCommunes'),
    path('addCommune/',Gestion_communes.views.addCommune,name='addCommune'),
    path('updateCommune/<pk>',Gestion_communes.views.updateCommune,name='updateCommune'),

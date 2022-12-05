@@ -1,22 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
 <table class="table table-bordered border-primary">
-  <tr>
-    <td><strong>id</strong></td>
-    <td><strong>Nom</strong></td>
-    <td>Username</td>
-    <td>Role</td>
-    <td>Action</td>
-
-  </tr>
+    <thead>   
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Username</th>
+        <th scope="col">Role</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+  <tbody>
   {%for contact in liste %}
   <tr>
     <td><strong>{{contact.code_utilisateur}}</strong></td>
     <td>{{contact.first_name}}</td>
     <td>{{contact.username}}</td>
     <td>{{contact.role}}</td>
-    <td>action</td>
+    <td>
+      <div class="col-md-12">
+        <span><a href="" class= "btn btn-primary mb-2" >modifier </span></a><br>
+        <span><a href="{% url 'delUtilisateur' contact.code_utilisateur %}" class="btn btn-danger">suprimer </span></a><br>
+      </div>
+    </td>
   </tr>
   {% endfor %}
+</tbody>
   </table>
 {% endblock content %}
