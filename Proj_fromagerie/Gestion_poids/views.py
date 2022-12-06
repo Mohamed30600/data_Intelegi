@@ -20,8 +20,8 @@ def addrecord(request):
   newshit.save()
   return HttpResponseRedirect(reverse('readtable'))
 
-def delete(pvalmin):
+def delete(request,pvalmin):
   TPoids.objects.filter(valmin=pvalmin).delete() 
-  #valeur_delete.delete()
   return HttpResponseRedirect(reverse('readtable'))
+
 # Create your views here.
