@@ -1,3 +1,18 @@
 from django.db import models
 
-# Create your models here.
+class TPoids(models.Model):
+    valmin = models.FloatField(primary_key=True)
+    valtimbre = models.FloatField(blank=True, null=True)
+
+    class Meta:
+        managed = True
+        db_table = 't_poids'
+
+
+class TPoidsv(models.Model):
+    valmin = models.FloatField(primary_key=True)
+    valtimbre = models.FloatField(blank=True, null=True)
+
+    class Meta:
+        managed = True
+        db_table = 't_poidsv'

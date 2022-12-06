@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table borser="0" width = "1200" height = 400>
+    <tr>
+        <td style = "padding-left:515px;">
+        <h1>Formulaire inscription  utilisateur avec role associer</h1>
+<form method="POST">
+  {% csrf_token %}
+  <fieldset class="form-group">
+    {{ form.as_p }}
+  </fieldset>
+  <div class="form-group">
+    <button class="btn btn-outline-info" type="submit">Register</button>
+  </div>
+</form>
+ 
+        </td>
+    </tr>
+ 
+    </table>
+
+{% endblock content %}
+
+{% comment %} <form action='' method='post' >
+
+    {{form.as_p}}
+    {% csrf_token %}
+    <button type = "submit">Valider </button>
+</form>
+
+
+</form> {% endcomment %}
+
+
