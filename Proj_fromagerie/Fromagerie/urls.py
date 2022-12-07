@@ -23,11 +23,17 @@ from Gestion_objets.views import ListObjet,CreateOnjetView,updateObjetView,delet
 import Authentification.views
 from Gestion_poids.views import ListPoid,CreatePoidView,CreatePoidView,updatePoidView,deletePoidView
 from Gestion_poids.views import ListPoidv,CreatePoidvView,updatePoidvView,deletePoidvView
+from Gestion_client.views import ListClientView,CreateClientView,updateClientView,deleteClientView
+from Gestion_commandes.views import ListEntcdeView ,CreateEntcdeView,updateEntdeView,deleteEntdeView
+from Gestion_ligne_commande.views import ListDtlcodeView,CreateDtlcodeView,updateDtlcodeView,deleteDtlcodeView
+
 
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
 from django.urls import re_path
+
+
 
 
 
@@ -74,6 +80,18 @@ urlpatterns = [
     path('addPoidv/',CreatePoidvView.as_view(),name='addPoidv'),
     path('updatePoidv/<pk>/',updatePoidvView.as_view(),name='updatePoidv'),
     path('deletePoidv/<pk>/',deletePoidvView.as_view(),name='deletePoidv'),
+    path('listClients/',ListClientView.as_view(),name='listClients'),
+    path('addClient/',CreateClientView.as_view(),name='addClient'),
+    path('updateClient/<pk>/',updateClientView.as_view(),name='updatePoidv'),
+    path('deletClient/<pk>/',deleteClientView.as_view(),name='deletePoidv'),
+    path('listCommandes/',ListEntcdeView.as_view(),name='listCommandes'),
+    path('addCommande/',CreateEntcdeView.as_view(),name='addCommande'),
+    path('updateCommande/<pk>/',updateEntdeView.as_view(),name='updateCommande'),
+    path('deletCommande/<pk>/',deleteEntdeView.as_view(),name='deletCommande'),
+    path('listLigneCommande/',ListDtlcodeView.as_view(),name='listCommandes'),
+    path('addLigneCommande/',CreateDtlcodeView.as_view(),name='addCommande'),
+    path('updateLigneCommande/<pk>/',updateDtlcodeView.as_view(),name='updateCommande'),
+    path('deletLigneCommande/<pk>/',deleteDtlcodeView.as_view(),name='deletCommande'),
     
     
     

@@ -4,4 +4,4 @@ from .models import TCommunes
 class TCommuneSerializer(serializers.ModelSerializer):
     class Meta:
         model=TCommunes
-        fields =('idcom','dep','cp','communes')
+        fields =('idcom_id','dep','cp','communes')

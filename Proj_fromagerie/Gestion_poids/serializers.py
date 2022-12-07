@@ -1,15 +1,16 @@
 from rest_framework import serializers
 
-from Gestion_objets.models import TObjet
+from Gestion_poids.models import TPoids
+from Gestion_poids.models import TPoidsv
 
 
-class TPoid(serializers.ModelSerializer):
+class TPoidSerializer(serializers.ModelSerializer):
     class Meta:
-        model=TObjet
+        model=TPoids
         fields =('valmin','valtimbre')
         
 
-class TPoidv(serializers.ModelSerializer):
+class TPoidvSerializer(serializers.ModelSerializer):
     class Meta:
-        model=TObjet
+        model=TPoidsv
         fields =('valmin','valtimbre')

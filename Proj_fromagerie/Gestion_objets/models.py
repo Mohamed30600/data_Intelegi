@@ -1,6 +1,7 @@
 from django.db import models
 
 from Gestion_conditionnement.models import TConditionnement
+from Gestion_ligne_commande.models import TDtlcode
 
 
 class TObjet(models.Model):
@@ -16,7 +17,7 @@ class TObjet(models.Model):
     idcondit= models.ForeignKey(TConditionnement,blank=True, null=True,on_delete=models.CASCADE)
     points = models.IntegerField(blank=True, null=True)
     o_ordre_aff = models.IntegerField(blank=True, null=True)
-
+    tDtlcode = models.ManyToManyField(TDtlcode)
     class Meta:
         managed = True
         db_table = 't_objet'
