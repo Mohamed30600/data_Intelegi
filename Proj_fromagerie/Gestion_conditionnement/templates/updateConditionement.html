@@ -3,12 +3,12 @@
 {% block content %}
 
 <div class="col-md-12">
-<form method="POST" class="post-form" action="/updateConditionement/{{tconditionvement.idcondit}}">
+<form method="POST" class="post-form" action="/updateConditionement/{{tconditionvement.idcondit_id}}">
         {% csrf_token %}
         <h1>mise ajour des donne embalage</h1>
         <div class="mb-3">
           <label >embalage ID:</label>
-          <input type="text" class="form-control" name="id" id="id_id" value="{{tconditionvement.idcondit}}"
+          <input type="text" class="form-control" name="idcondit_id" id="id_idcondit_id" value="{{tconditionvement.idcondit_id}}"
         </div>
         <label  >NOM </label>
         <input type="text" class="form-control" name="libcondit" id="id_libcondit" value="{{tconditionvement.libcondit}}"

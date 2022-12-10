@@ -23,16 +23,17 @@ def addconditionnement(request):
         return render (request,'addconditionnement.html',{'form':form})
     
 def updateConditionnement (request,pk):
-            conditionnement = TConditionnement.objects.get(idcondit=pk)
+            conditionnement = TConditionnement.objects.get(idcondit_id=pk)
             if request.method == 'POST':
                 form = Conditionnementform(request.POST,instance=conditionnement)
                 if form.is_valid():
+                    print("yesy")
                     form.save()
                     return redirect ("/conditionnement")
             return render(request,'updateConditionement.html',{'tconditionvement':conditionnement})
         
         
 def delConditionement (request,pk):
-    conditionnement =TConditionnement.objects.get(idcondit=pk)
+    conditionnement =TConditionnement.objects.get(idcondit_id=pk)
     conditionnement.delete()
     return redirect("/conditionnement")

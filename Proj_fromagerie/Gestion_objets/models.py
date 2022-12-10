@@ -1,5 +1,7 @@
 from django.db import models
 
+from Gestion_conditionnement.models import TConditionnement
+
 
 
 class TObjet(models.Model):
@@ -12,7 +14,7 @@ class TObjet(models.Model):
     o_imp = models.IntegerField(blank=True, null=True)
     o_aff = models.IntegerField(blank=True, null=True)
     o_cartp = models.IntegerField(blank=True, null=True)
-    idcondit = models.IntegerField(blank=True, null=True)
+    idcondit = models.ForeignKey(TConditionnement,blank=True, null=True,on_delete=models.SET_NULL)
     points = models.IntegerField(blank=True, null=True)
     o_ordre_aff = models.IntegerField(blank=True, null=True)
 
