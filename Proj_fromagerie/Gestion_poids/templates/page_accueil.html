@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <title>Django CRUD Operations</title>
+  <title>Table_gestion_poids</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -17,11 +17,12 @@
       </tr>
     </thead>
     <tbody>
-	{% for x in t_poids %}  
+	{% for poids in t_poids %}  
       <tr>
-		<td>{{x.valmin}}</td>
-		<td>{{x.valtimbre}}</td>
-        <td><a href="delete/{{ x.valmin|floatformat:"0" }}">delete</a></td>
+		<td>{{poids.valmin}}</td>
+		<td>{{poids.valtimbre}}</td>
+        <td><a href="delete/{{ poids.valmin|floatformat:"0" }}">supprimer</a></td>
+        <td><a href="modif/{{ poids.valmin|floatformat:"0" }}">modifier</a></td>
       </tr>
 	  {% endfor %} 
 	</tbody>
@@ -29,7 +30,7 @@
 </div>
 
 <p>
-    <a href="add/">modif liste<a/>
+    <a href="ajout/">add value<a/>
 <p>
 
 </body>

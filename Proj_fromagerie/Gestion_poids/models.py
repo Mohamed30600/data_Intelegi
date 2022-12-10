@@ -5,7 +5,7 @@ class TPoids(models.Model):
     valtimbre = models.FloatField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 't_poids'
 
 
