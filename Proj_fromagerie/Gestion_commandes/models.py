@@ -4,8 +4,8 @@ from Gestion_client.models import TClient
 from Gestion_ligne_commande.models import TDtlcode
 
 class TEntcde(models.Model):
-    codcde = models.AutoField(primary_key=True)
-    commande = models.ForeignKey(TDtlcode,blank=True, null=True,on_delete=models.SET_NULL)
+    codcde = models.AutoField(primary_key=True,unique=True)
+    commande_id = models.ForeignKey(TDtlcode,blank=True, on_delete=models.CASCADE)
     datcde = models.DateTimeField(blank=True, null=True)
     codcli = models.ForeignKey(TClient,blank=True, null=True,on_delete=models.SET_NULL)
     timbrecli = models.FloatField(blank=True, null=True)

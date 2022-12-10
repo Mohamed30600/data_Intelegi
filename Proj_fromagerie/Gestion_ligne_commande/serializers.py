@@ -4,4 +4,4 @@ from .models import TDtlcode
 class TDtlcodeSerializer(serializers.ModelSerializer):
     class Meta:
         model=TDtlcode
-        fields =('codcde','codobj','qte','colis','commentaire')
+        fields =('codcde','codobj','qte','colis','commentaire','commande_id')

@@ -1,6 +1,4 @@
-from django.shortcuts import render
 
-from django.shortcuts import render
 from rest_framework.generics import ListAPIView ,CreateAPIView ,UpdateAPIView , DestroyAPIView
 
 from Gestion_commandes.serializers import TEntcdeSerializer

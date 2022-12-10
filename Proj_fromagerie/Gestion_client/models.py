@@ -1,10 +1,10 @@
 from django.db import models
 
 from Gestion_communes.models import TCommunes
-
+#model table client avec ses attribut
 class TClient(models.Model):
     codcli_id = models.AutoField(primary_key=True)
-    idcom=models.ForeignKey(TCommunes,blank=True, null=True,on_delete=models.SET_NULL)
+    idcom=models.ForeignKey(TCommunes,blank=True,on_delete=models.CASCADE)
     genrecli = models.CharField(max_length=8, blank=True, null=True)
     nomcli = models.CharField(max_length=40)
     prenomcli = models.CharField(max_length=30, blank=True, null=True)

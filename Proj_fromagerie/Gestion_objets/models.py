@@ -5,7 +5,7 @@ from Gestion_ligne_commande.models import TDtlcode
 
 
 class TObjet(models.Model):
-    codobj = models.AutoField(primary_key=True)
+    codobj_id = models.AutoField(primary_key=True)
     libobj = models.CharField(max_length=50, blank=True, null=True)
     tailleobj = models.CharField(db_column='Tailleobj', max_length=50, blank=True, null=True)  # Field name made lowercase.
     puobj = models.DecimalField(max_digits=19, decimal_places=4, blank=True, null=True)
@@ -21,3 +21,11 @@ class TObjet(models.Model):
     class Meta:
         managed = True
         db_table = 't_objet'
+        
+class TObjetDtlcode(models.Model):
+    codobj = models.ForeignKey(TObjet, models.DO_NOTHING, db_column='codobj')
+    commande = models.ForeignKey(TDtlcode, models.DO_NOTHING, to_field='codcde')
+
+    class Meta:
+        managed = True
+        db_table = 't_objet_dtlcode'
