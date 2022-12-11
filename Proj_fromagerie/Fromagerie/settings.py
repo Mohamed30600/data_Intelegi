@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'Gestion_communes',
     'Gestion_objets',
     'Gestion_conditionnement',
-    'crispy_forms'
+    'crispy_forms',
+    
     
 ]
 
