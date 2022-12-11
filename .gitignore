@@ -1,5 +1,5 @@
 /Env
 requirement.txt
 /Proj_fromagerie/dbsqlite3
-/Proj_fromageriemanage.py
+/Proj_fromagerie/manage.py
 /Proj_fromagerie/models.txt
