@@ -1,0 +1,18 @@
+<html>
+    <head></head>
+
+    <body>
+        <h1>ajouter une valeur</h1>
+
+        <form action="ajout_saisi_donnees/" method="post">
+        {% csrf_token %}
+        Valeur:<br>
+        <input name="vmin">
+        <br><br>
+        Valeur timbre:<br>
+        <input name="vtimbre">
+        <br><br>
+        <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

@@ -14,7 +14,6 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
 import Authentification.views
 import Gestion_utilisateurs.views
 import Gestion_communes.views
@@ -22,8 +21,10 @@ import Gestion_objets.views
 import Gestion_conditionnement.views
 #vue generique de connexion fournit par django
 from django.contrib.auth.views import LoginView
+from django.urls import path, include
 
 urlpatterns = [
+    path('Gestion_poids/', include('Gestion_poids.urls')),
     path('admin/', admin.site.urls),
      
    path('login/', Authentification.views.login_page, name='login'),
